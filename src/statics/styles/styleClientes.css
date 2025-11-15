@@ -1,0 +1,21 @@
+
+.btn-add { 
+    background: #198754; 
+}
+.btn-add:hover { 
+    background: #156b43; 
+}
+.btn-excluir { 
+    background: #dc3545; 
+}
+.btn-excluir:hover { 
+    background: #b12d3a; 
+}
+
+.btn-add {
+    display: block;           
+    width: 100%;              
+    max-width: 100%;           
+    padding: 10px;
+    margin: 15px 0px 15px 0px ;
+}

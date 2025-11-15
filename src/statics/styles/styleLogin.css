@@ -1,0 +1,94 @@
+
+/* ---------- RESET ---------- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f4f6f8;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+/* ---------- LOGIN PANEL ---------- */
+#painelLogin {
+    background-color: #fff;
+    width: 360px;
+    padding: 40px 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+#painelLogin h2 {
+    margin-bottom: 25px;
+    font-size: 24px;
+    color: #1c2833;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+input[type="text"],
+input[type="password"] {
+    padding: 12px;
+    border: 1px solid #ced4da;
+    border-radius: 6px;
+    font-size: 14px;
+    outline: none;
+    transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+input[type="text"]:focus,
+input[type="password"]:focus {
+    border-color: #0d6efd;
+    box-shadow: 0 0 5px rgba(13, 110, 253, 0.3);
+}
+
+input[type="button"] {
+    background-color: #0d6efd;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    padding: 12px;
+    font-size: 15px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+input[type="button"]:hover {
+    background-color: #0b5ed7;
+}
+
+/* ---------- LINK OU TEXTO EXTRA ---------- */
+.login-info {
+    margin-top: 15px;
+    font-size: 13px;
+    color: #6c757d;
+}
+
+.login-info a {
+    color: #0d6efd;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.login-info a:hover {
+    color: #084298;
+}
+
+/* ---------- RESPONSIVIDADE ---------- */
+@media (max-width: 420px) {
+    #painelLogin {
+    width: 90%;
+    padding: 30px 20px;
+    }
+}

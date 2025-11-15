@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CRM Vendas - Fornecedores</title>
+  <link rel="stylesheet" href="style.css"/>
+  <link rel="stylesheet" href="styleMenu.css">
+  <link rel="stylesheet" href="styleObjects.css">
+</head>
+<body>
+
+  <aside id="sidebar">
+    <h2 class="logo">CRM Vendas</h2>
+    <nav id="menu">
+        <a href="index.html">Inicio</a>
+        <a href="clientes.html">Clientes</a>
+        <a href="#" class="toggle">Pedidos</a>
+        <div class="submenu">
+            <a href="incluirPedido.html">Incluir Pedido</a>
+            <a href="listaPedidos.html">Lista de Pedidos</a>
+        </div>
+        <a href="#" class="active">Fornecedores</a>
+        <a href="relatorios.html">Relatórios</a>
+    </nav>
+  </aside>
+
+  <main id="main-content">
+    <div id="topbar">
+      <h1>Fornecedores</h1>
+      <div class="usuario">Usuário: <span>João Silva</span></div>
+    </div>
+
+    <section class="tabela-fornecedores">
+      <table>
+        <thead>
+          <tr>
+            <th>Nome</th>
+            <th>Empresa</th>
+            <th>Email</th>
+            <th>Telefone</th>
+            <th>Status</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Lucas Almeida</td>
+            <td>Distribuidora Alfa</td>
+            <td>lucas@alfa.com</td>
+            <td>(11) 97777-1234</td>
+            <td><span class="status ativo">Ativo</span></td>
+          </tr>
+          <tr>
+            <td>Ana Pereira</td>
+            <td>Comercial Beta</td>
+            <td>ana@beta.com</td>
+            <td>(21) 98888-4321</td>
+            <td><span class="status inativo">Inativo</span></td>
+          </tr>
+          <tr>
+            <td>Marcos Lima</td>
+            <td>Importadora Delta</td>
+            <td>marcos@delta.com</td>
+            <td>(31) 95555-9876</td>
+            <td><span class="status ativo">Ativo</span></td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+  </main>
+
+  <script src="functionToggle.js"></script>
+
+</body>
+</html>

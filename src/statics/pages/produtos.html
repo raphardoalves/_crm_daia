@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CRM Vendas</title> 
+  <link rel="stylesheet" href="../styles/style.css">
+  <link rel="stylesheet" href="../styles/styleObjects.css">
+  <link rel="stylesheet" href="../styles/styleProduto.css">
+  
+</head>
+<body>
+<div id="container">
+    <aside id="sidebar">
+        <h2 class="logo">CRM Vendas</h2>
+        <nav id="menu">
+            <a href="index.html">Inicio</a>
+            <a href="clientes.html">Clientes</a>
+            <a href="#" class="toggle">Pedidos</a>
+            <div class="submenu">
+                <a href="incluirPedido.html">Incluir Pedido</a>
+                <a href="listaPedidos.html">Lista de Pedidos</a>
+            </div>
+            <a href="relatorios.html">Relatórios</a>
+        </nav>
+    </aside>
+
+    <main class="main-content">
+
+        <section id="form-container">
+            <div id="formpesquisa">
+
+                <div id="itenspesquisa">
+                    <input id="pesquisa" type="text" name="pesquisa" placeholder="Nome, Marca ou Código..." spellcheck="false" autocapitalize="none" />
+                    <div id="btnpesquisa">
+                        
+                        <button type="button" class="barra" id="btnBuscar">
+                            <img src="../imgs/site/lupa.png" height="20" width="20" alt="">
+                        </button>
+                        
+                        <button class="barra" id="btn-filtrar" type="button" onclick="abrirfiltro()">
+                            <img src="../imgs/site/filtro0.png" height="20" width="20" alt="">
+                        </button>
+
+                    </div>
+                </div>
+                <div id="menu-filtros" role="region" aria-label="Filtros adicionais" aria-hidden="true">
+                    <label for="filtro-valor">Filtrar Por:</label>
+                    <select name="filtro-valor" id="filtro-valor">
+                        <option value="menor">
+                            Preço MIN
+                        </option>
+                        <option value="maior">
+                            Preço MAX
+                        </option>
+                        <option value="menorE">
+                            Estoque MIN
+                        </option>
+                        <option value="maiorE">
+                            Estoque Max
+                        </option>
+                    </select>
+                    <label for="fpreco">Margen Geral:</label>
+                    <select name="fpreco" id="fpreco">
+                        <option value="A+">5%</option>
+                        <option value="A">3%</option>
+                        <option value="B">2,5%</option>
+                        <option value="C">2%</option>
+                        <option value="D">1,5%</option>
+                        <option value="E">1%</option>
+                    </select>
+                </div>
+            </div>
+        </section>
+        <!-- TEMPLATE DE PRODUTO FENIX -->
+        <template id="produto-template">
+
+            <div class="classeproduto">
+                <a class="link-img" target="_blank">
+                    <div class="imagemprod">
+                        <img class="imgcaminho" onerror="this.onerror=null; this.src='../imgs/Z.jpg'">
+                    </div>
+                </a>
+                <div class="atributosprod">
+                    <p class="codigo"></p>
+                    <p class="produto"></p>
+                    <p class="marca"></p>
+                    <p class="validade"></p>
+                    <select class="faixapreco">
+                        <option value="A+" class="v1"></option>
+                        <option value="A" class="v2"></option>
+                        <option value="B" class="v3"></option>
+                        <option value="C" class="v4"></option>
+                        <option value="D" class="v5"></option>
+                        <option value="E" class="v6"></option>
+                    </select>
+
+                    <p class="estoque"></p>
+                    <button class="addCarrinho">Adicionar</button>
+                </div>
+            </div>                   
+        </template>
+
+        <div id="produtos-container"></div>
+
+        <p id="nproduto">Produto Não Encontrado...</p>
+    </main>
+</div>
+
+  <script src="/funcoes/functionToggle.js"></script>
+  <script src="/funcoes/ordenar.js" type="module"></script>
+
+</body>
+</html>

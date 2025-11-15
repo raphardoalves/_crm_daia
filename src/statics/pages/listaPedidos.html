@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CRM Vendas - Pedidos</title>
+  <link rel="stylesheet" href="../styles/style.css">
+  <link rel="stylesheet" href="../styles/styleMenu.css">
+  <link rel="stylesheet" href="../styles/styleObjects.css">
+  <link rel="stylesheet" href="../styles/styleClientes.css">
+</head>
+<body>
+<div id="container">
+  <aside id="sidebar">
+    <h2 class="logo">CRM Vendas</h2>
+    <nav id="menu">
+      <a href="index.html">Inicio</a>
+      <a href="clientes.html">Clientes</a>
+      <a href="#" class="toggle active">Pedidos</a>
+      <div class="submenu">
+        <a href="incluirPedido.html">Incluir Pedido</a>
+        <a href="listaPedidos.html">Lista de Pedidos</a>
+      </div>
+      <a href="relatorios.html">Relatórios</a>
+    </nav>
+  </aside>
+
+  <main class="main-content">
+    <div id="topbar">
+      <h1>Pedidos</h1>
+      <div class="usuario">Usuário: <span>João Silva</span></div>
+    </div>
+
+    <section class="tabela-container">
+      <table>
+        <thead>
+          <tr>
+            <th>ID Pedido</th>
+            <th>ID Cliente</th>
+            <th>Cliente</th>
+            <th>Registrado</th>
+            <th>Status</th>
+            <th>Fornecedor</th>
+            <th>Total do Pedido</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>1</td>
+            <td>3</td>
+            <td>JUCA BAR E RESTAURANTE LTDA</td>
+            <td>15:22h</td>
+            <td>Analise</td>
+            <td>Mega G</td>
+            <td>5.000,00</td>
+          </tr>
+          <tr>
+            <td>1</td>
+            <td>3</td>
+            <td>JUCA BAR E RESTAURANTE LTDA</td>
+            <td>15:22h</td>
+            <td>Analise</td>
+            <td>Mega G</td>
+            <td>5.000,00</td>
+          </tr>
+          <tr>
+            <td>1</td>
+            <td>3</td>
+            <td>JUCA BAR E RESTAURANTE LTDA</td>
+            <td>15:22h</td>
+            <td>Analise</td>
+            <td>Mega G</td>
+            <td>5.000,00</td>
+          </tr>
+        </tbody>
+      </table>
+      
+    </section>
+  </main>
+</div>
+  <script src="/funcoes/functionToggle.js"></script>
+
+</body>
+</html>

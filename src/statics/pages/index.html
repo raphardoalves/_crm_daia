@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CRM Vendas</title> 
+  <link rel="stylesheet" href="../styles/style.css">
+  <link rel="stylesheet" href="../styles/styleMenu.css">
+  <link rel="stylesheet" href="../styles/styleObjects.css">
+</head>
+<body>
+<div id="container">
+  <aside id="sidebar">
+    <h2 class="logo">CRM Vendas</h2>
+    <nav id="menu">
+        <a href="#" class="active">Inicio</a>
+        <a href="clientes.html">Clientes</a>
+        <a href="#" class="toggle">Pedidos</a>
+        <div class="submenu">
+            <a href="incluirPedido.html">Incluir Pedido</a>
+            <a href="listaPedidos.html">Lista de Pedidos</a>
+        </div>
+        <a href="relatorios.html">Relatórios</a>
+    </nav>
+  </aside>
+
+  <main class="main-content">
+    <div id="topbar">
+      <h1>Dashboard</h1>
+      <div class="usuario">Usuário: <span>João Silva</span></div>
+    </div>
+
+    <section class="cards">
+      <div class="card">
+        <h3>Vendas no Mês</h3>
+        <p>R$ 124.500,00</p>
+      </div>
+      <div class="card">
+        <h3>Pedidos Pendentes</h3>
+        <p>23</p>
+      </div>
+      <div class="card">
+        <h3>Clientes Ativos</h3>
+        <p>56</p>
+      </div>
+    </section>
+
+    <section class="grafico">
+      [ Gráfico de desempenho mensal (placeholder visual) ]
+    </section>
+  </main>
+</div>
+  <script src="/funcoes/functionToggle.js"></script>
+  
+
+</body>
+</html>
