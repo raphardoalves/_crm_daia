@@ -14,4 +14,3 @@ app.use('/index', routerPage)
 
 app.use('/users', routerUser)
 app.use('/products', routerProduct)
-// TEST
