@@ -6,7 +6,6 @@ toggleBtn.addEventListener('click', (e) => {
     submenu.style.display = submenu.style.display === 'flex' ? 'none' : 'flex';
     toggleBtn.classList.toggle('open');
 });
-
 function abrirCadastro() {
     const form_cadastro = document.querySelector('.tabela-form')
     const visible = window.getComputedStyle(form_cadastro).display
@@ -20,3 +19,18 @@ function abrirCadastro() {
             alert("Nenhum")
     }
 }
+document.getElementById("puxe").addEventListener("click", (event) => {
+    const painelCarrinho = document.getElementById("cart-panel")
+    const botao = event.currentTarget
+    const visible = window.getComputedStyle(painelCarrinho).right
+    switch(visible) {
+        case '0px': painelCarrinho.style.right = '-380px';
+                    botao.style.right = '-0px'
+            break;
+        case '-380px':  painelCarrinho.style.right = '0px'
+                        botao.style.right = "380px"
+            break;
+        default:
+            alert("Nenhum")
+    }
+})
