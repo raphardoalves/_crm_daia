@@ -1,11 +1,37 @@
 const btnBuscar = document.getElementById("btnBuscar")
 const inputPesquisa = document.getElementById("pesquisa")
 
+class Pedido {
+    constructor(idCliente) {
+        this.idCliente = idCliente
+        this.itenSolicitado = []
+    }
+    addProduto(codigoProduto, fornecedor, nome, preco, quantidade) {
+        const total = preco*quantidade
+        this.itenSolicitado.push({
+            codigoProduto,
+            fornecedor,
+            nome,
+            preco,
+            quantidade,
+            total
+        })
+    }
+    deletarProduto(codigoProduto) {
+        this.itenSolicitado = this.itenSolicitado.filter(item => item.codigoProduto !== codigoProduto)
+    }
+    get totalGeral() {
+        return this.itenSolicitado.reduce((soma, item) => soma + item.total,0)
+    }
+}
+
+const parms = new URLSearchParams(location.search);
+const idCliente = parms.get("idCliente");
+
+const pedido = new Pedido(idCliente);
 
 const ordenar = async (argument = "") => {
     
-    const parms = new URLSearchParams(window.location.search)
-    const idCliente = parms.get("idCliente")
     const fornecedor = parms.get("fornecedor")
 
     const body = {
@@ -43,12 +69,24 @@ const ordenar = async (argument = "") => {
             clone.querySelector("p.marca").textContent = item.marca;
             clone.querySelector("p.estoque").textContent = `ESTQ ${item.estoque} - ${item.pesocaixa}`;
             if (fornecedor == "produtosmegag"){ clone.querySelector("p.validade").textContent = item.validade } // ALTERAR A COLUNA DE DATA PARA STRING NO SQL
-            clone.querySelector("option.v1").textContent = `R$ ${item.valor1}`
-            clone.querySelector("option.v2").textContent = `R$ ${item.valor2}`
-            clone.querySelector("option.v3").textContent = `R$ ${item.valor3}`
-            clone.querySelector("option.v4").textContent = `R$ ${item.valor4}`
-            clone.querySelector("option.v5").textContent = `R$ ${item.valor5}`
-            clone.querySelector("option.v6").textContent = `R$ ${item.valor6}`
+            
+            clone.querySelector("option.v1").textContent = item.valor1
+            clone.querySelector("option.v1").value = item.valor1
+            
+            clone.querySelector("option.v2").textContent = item.valor2
+            clone.querySelector("option.v2").value = item.valor2
+            
+            clone.querySelector("option.v3").textContent = item.valor3
+            clone.querySelector("option.v3").value = item.valor3
+            
+            clone.querySelector("option.v4").textContent = item.valor4
+            clone.querySelector("option.v4").value = item.valor4
+            
+            clone.querySelector("option.v5").textContent = item.valor5
+            clone.querySelector("option.v5").value = item.valor5
+
+            clone.querySelector("option.v6").textContent = item.valor6
+            clone.querySelector("option.v6").value = item.valor6
 
             const img = clone.querySelector(".imgcaminho");
             const aTag = clone.querySelector(".link-img");
@@ -64,7 +102,25 @@ const ordenar = async (argument = "") => {
             aTag.href = caminho
             img.alt = `Imagem do produto ${item.produto}`;
             
-            //const btnAdd = clone.querySelector(".btnAdd").parentElement;
+            const btnAdd = clone.querySelector(".addCarrinho");
+            btnAdd.addEventListener("click", () => {
+                const codigo = item.codigo;
+                
+                if (!pedido.itenSolicitado.some(item => item.codigoProduto === codigo)) {
+                    
+                    const fornecedor = parms.get("fornecedor");
+                    const nome = item.produto;
+                    const quantidade = 2;
+
+                    const preco = Number(document.querySelector(".faixapreco").value)
+   
+                    pedido.addProduto(codigo, fornecedor, nome, preco, quantidade);
+                    
+                } else {
+                    alert("Item ja incluso")
+                }
+                renderCarrinho()
+            })
             //clone.querySelector(".faixapreco").value = valorSelecionado
 
             fragmento.appendChild(clone);
@@ -85,6 +141,29 @@ inputPesquisa.addEventListener("keydown", (event) => {
     if (event.key === 'Enter') {
         btnBuscar.click()
     }
-})  
+})
 
+function renderCarrinho() {
+    const corpoCarrinho = document.getElementById("corpoCarrinho")
+    corpoCarrinho.innerHTML = ""
+    
+    pedido.itenSolicitado.forEach(item => {
+        const tabelaSelecionados = document.createElement("tr")
+        const itemNome = document.createElement("td")
+        const itemPreco = document.createElement("td")
+        const itemQuantidade = document.createElement("td")
+        const itemTotal = document.createElement("td")
 
+        itemNome.textContent = item.nome;
+        itemPreco.textContent = item.preco;
+        itemQuantidade.textContent = item.quantidade;
+        itemTotal.textContent = item.total;
+
+        tabelaSelecionados.appendChild(itemNome)
+        tabelaSelecionados.appendChild(itemPreco)
+        tabelaSelecionados.appendChild(itemQuantidade)
+        tabelaSelecionados.appendChild(itemTotal)
+        corpoCarrinho.appendChild(tabelaSelecionados)
+    })
+    
+}

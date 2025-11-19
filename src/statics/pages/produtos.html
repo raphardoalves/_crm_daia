@@ -111,42 +111,48 @@
         <div id="puxe"></div>
         <div id="containerCarrinho">
             <h2> Carrinho </h2>
-            <table>
-                <tr>
-                    <th>Nome</th>
-                    <th>Preço</th>
-                    <th>Qtd</th>
-                    <th>Total</th>
-                    <th></th>
-                </tr>
-                <tr>
-                    <td class="nome">Seriguela</td>
-                    <td class="preco">R$ 1,79</td>
-                    <td>
-                        <div class="qty-container">
-                            <button class="qty-btn">-</button>
-                            <span>1</span>
-                            <button class="qty-btn">+</button>
-                        </div>
-                    </td>
-                    <td class="preco"> R$80,00 </td>
-                    <td><button class="remove-btn">X</button></td>
-                </tr>
+            <table id="tabelaCarrinho">
+                <thead>
+                    <tr>
+                        <th>Nome</th>
+                        <th>Preço</th>
+                        <th>Qtd</th>
+                        <th class="totalProdutoSelecionado">Total</th>
+                        <th></th>
+                    </tr>
+                </thead>
+                
+                <tbody id="corpoCarrinho">
+                    <tr>
+                        <td class="nomeProdutoSelecionado">?</td>
+                        <td class="precoProdutoSelecionado">?</td>
+                        <td>
+                            <div class="qty-container">
+                                <button class="qty-btn">-</button>
+                                <span class="quantidadeProdutoSelecionado">?</span>
+                                <button class="qty-btn">+</button>
+                            </div>
+                        </td>
+                        <td class="precoTotalCarrinho">?</td>
+                        <td><button class="remove-btn">X</button></td>
+                    </tr>
+
+                </tbody>
             </table>
             <p id="carrinhoVazio">Carrinho Vazio...</p>
         </div>
 
         <div id="finalizar">
-            <div id="total-box">Valor Total: R$ 16,87</div>
+            <div id="total-box">?</div>
             <button id="checkout">Finalizar Compra </button>
         </div>
 
     </aside>
-
+    
   
-
     <script src="/funcoes/functionToggle.js"></script>
     <script src="/funcoes/ordenar.js" type="module"></script>
+    
 
 </body>
 </html>
